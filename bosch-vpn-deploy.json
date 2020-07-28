@@ -15,7 +15,7 @@
             "type": "String"
         },
         "localNetwork_pi_lgw_cvs_prod_1_IpAddress": {
-            "defaultValue": "67.240.132.31",
+            "defaultValue": "",
             "type": "String"
         },
         "localNetwork_pi_s2s_cvs_prod_1_SharedKey": {
