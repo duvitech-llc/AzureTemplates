@@ -14,8 +14,11 @@
             "defaultValue": "pi-lgw-cvs-prod-1",
             "type": "String"
         },
+		"localNetwork_pi_lgw_cvs_prod_1_addressPrefixes":{
+            "defaultValue": [],
+            "type": "array"
+		},
         "localNetwork_pi_lgw_cvs_prod_1_IpAddress": {
-            "defaultValue": "",
             "type": "String"
         },
         "localNetwork_pi_s2s_cvs_prod_1_SharedKey": {
@@ -40,9 +43,9 @@
             "location": "eastus",
             "properties": {
                 "localNetworkAddressSpace": {
-                    "addressPrefixes": []
+                    "addressPrefixes": "[parameters('localNetwork_pi_lgw_cvs_prod_1_addressPrefixes')]"
                 },
-                "gatewayIpAddress": "[parameters('localNetwork_pi_lgw_cvs_prod_1_IpAddress')]" 
+                "gatewayIpAddress": "[parameters('localNetwork_pi_lgw_cvs_prod_1_IpAddress')]"
             }
         },
         {
@@ -145,7 +148,7 @@
                 "connectionType": "IPsec",
                 "connectionProtocol": "IKEv2",
                 "routingWeight": 0,
-                "sharedKey": "[parameters('localNetwork_pi_s2s_cvs_prod_1_SharedKey')]" ,
+                "sharedKey": "[parameters('localNetwork_pi_s2s_cvs_prod_1_SharedKey')]",
                 "enableBgp": false,
                 "useLocalAzureIpAddress": false,
                 "usePolicyBasedTrafficSelectors": false,
